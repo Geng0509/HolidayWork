@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        .paint-header{
+            background-color: rgb(202, 199, 199);
+            width: 100%;
+            height: 25px;
+        }
+        .paint-header-left{
+            margin-left: -40px;
+        }
+        .paint-header-left li{
+            float: left;
+            width: 33px;
+            margin-right: 7px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 10px;
+        }
+        .paint li:hover{
+            cursor: pointer;
+        }
+        .paint-body{
+            width: 100%;
+            height: 500px;
+            padding-top: 25px;
+        }
+        .sidebar{
+            width: 50px;
+            height: 200px;
+        }
+        .sidebarBottom{
+            width: 50px;
+            height:300px ;
+            background-color: rgb(202, 199, 199);
+        }
+        .toolbar{
+            width: 50px;
+            height: 200px;
+            background:url(./1.png) rgb(202, 199, 199) no-repeat;
+        }
+        .one{
+            width: 48px;
+            height: 21px;
+            border: 1px black solid;
+        }
+        .any-tailor{
+            width: 23px;
+            height: 21px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .rec-tailor{
+            width: 23px;
+            height: 21px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .two{
+            width: 48px;
+            height: 22px;
+            border: 1px black solid;
+        }
+        .eraser{
+            width: 23px;
+            height: 22px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .eraser:active{
+            background-color:cornsilk ;
+        }
+        .fill{
+            width: 23px;
+            height: 22px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .three{
+            width: 48px;
+            height: 24px;
+            border: 1px black solid;
+        }
+        .color{
+            width: 23px;
+            height: 24px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .magnifier{
+            width: 23px;
+            height: 24px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .four{
+            width: 48px;
+            height: 22px;
+            border: 1px black solid;
+        }
+        .pencil{
+            width: 23px;
+            height: 22px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .brush{
+            width: 23px;
+            height: 22px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .five{
+            width: 48px;
+            height: 23px;
+            border: 1px black solid;
+        }
+        .spray{
+            width: 23px;
+            height: 23px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .word{
+            width: 23px;
+            height: 23px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .six{
+            width: 48px;
+            height: 24px;
+            border: 1px black solid;
+        }
+        .straight-line{
+            width: 23px;
+            height: 24px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .curve{
+            width: 23px;
+            height: 24px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .seven{
+            width: 48px;
+            height: 24px;
+            border: 1px black solid;
+        }
+        .rectangle{
+            width: 23px;
+            height: 24px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .polygon{
+            width: 23px;
+            height: 24px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .eight{
+            width: 48px;
+            height: 24px;
+            border: 1px black solid;
+        }
+        .circle{
+            width: 23px;
+            height: 24px;
+            margin-top: -2px;
+            float: left;
+            border-right:1px black solid;
+            cursor: pointer;
+        }
+        .round-ractangle{
+            width: 23px;
+            height: 24px;
+            margin-left: 24px;
+            border-left:1px black solid;
+            cursor: pointer;
+        }
+        .bodyRight{
+            width: 1197px;
+            height: 500px;
+            margin-top:-200px;
+            margin-left: 50px;
+            position:relative;
+            background-color: grey;
+        }
+        .canvas{
+            position: absolute;
+            margin-top: 5px;
+            margin-left: 3px;
+            background-color: white;
+        }
+        .paintBottom{
+            width: 100%;
+            height: 50px;
+            margin-top: -5px;
+            background-color: rgb(202, 199, 199);
+        }
+        .palette{
+            width: 350px;
+            height: 30px;
+            margin-top: 5px;
+        }
+        .blackWhite{
+            width: 30px;
+            height: 30px;
+            margin-top: 8px;
+            margin-left: 2px;
+            float: left;
+            border:1px black solid;
+        }
+        .colors{
+            width: 260px;
+            height: 30px;
+            float: left;
+            margin-top: -5px;
+            margin-left: -38px;
+        }
+        .colors li{
+            float: left;
+            width: 14px;
+            height: 14px;
+            margin-right: 1px;
+            margin-bottom: 1px;
+        }
+        .tips{
+            width: 100%;
+            margin-top: -15px;
+            background-color: rgb(202, 199, 199);
+        }
+    </style>
+</head>
+<body>
+    <div class="paint">
+        <div class="paint-header">
+            <div class="paint-header-left">
+                <ul>
+                    <li>文件</li>
+                    <li>编辑</li>
+                    <li>视图</li>
+                    <li>帮助</li>
+                </ul>
+            </div>
+        <div class="paint-body">
+            <div class="sidebar">
+                <div class="toolbar">
+                    <div class="one">
+                        <div class="any-tailor"></div>
+                        <div class="rec-tailor"></div>
+                    </div>
+                    <div class="two">
+                        <div class="eraser"></div>
+                        <div class="fill"></div>
+                    </div>
+                    <div class="three">
+                        <div class="color"></div>
+                        <div class="magnifier"></div>
+                    </div>
+                    <div class="four">
+                        <div class="pencil"></div>
+                        <div class="brush"></div>
+                    </div>
+                    <div class="five">
+                        <div class="spray"></div>
+                        <div class="word"></div>
+                    </div>
+                    <div class="six">
+                        <div class="straight-line"></div>
+                        <div class="curve"></div>
+                    </div>
+                    <div class="seven">
+                        <div class="rectangle"></div>
+                        <div class="polygon"></div>
+                    </div>
+                    <div class="eight">
+                        <div class="circle"></div>
+                        <div class="round-ractangle"></div>
+                    </div>
+                </div>
+                <div class="sidebarBottom">
+
+                </div>
+            </div>
+            <div class="bodyRight">
+                <div class="canvas">
+                    <canvas id="mycanvas" width="1000px" height="400px"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="paintBottom">
+            <div class="palette">
+                <div class="blackWhite"></div>
+                <div class="colors">
+                    <ul>
+                        <li id="black" style="background-color: black;"></li>
+                        <li id="grey" style="background-color: grey;"></li>
+                        <li id="darkred" style="background-color: darkred;"></li>
+                        <li id="olive" style="background-color: olive;"></li>
+                        <li id="green" style="background-color: green;"></li>
+                        <li id="teal" style="background-color: teal;"></li>
+                        <li id="darkblue" style="background-color: darkblue;"></li>
+                        <li id="purple" style="background-color: purple;"></li>
+                        <li id="darkKhaki" style="background-color: darkkhaki;"></li>
+                        <li id="darkGreen" style="background-color: darkgreen;"></li>
+                        <li id="blue" style="background-color: blue;"></li>
+                        <li id="navy" style="background-color: navy;"></li>
+                        <li id="mediumBlue" style="background-color: mediumblue;"></li>
+                        <li id="brown" style="background-color: brown;"></li>
+                    </ul>
+                    <ul>
+                        <li id="white" style="background-color: white;"></li>
+                        <li id="gray" style="background-color: gray;"></li>
+                        <li id="red" style="background-color: red;"></li>
+                        <li id="yellow" style="background-color: yellow;"></li>
+                        <li id="lime" style="background-color: lime;"></li>
+                        <li id="cyan" style="background-color: cyan;"></li>
+                        <li id="royalBlue" style="background-color: royalblue;"></li>
+                        <li id="viole" style="background-color: violet;"></li>
+                        <li id="khaki" style="background-color: khaki;"></li>
+                        <li id="springGreen" style="background-color: springgreen;"></li>
+                        <li id="aqua" style="background-color: aqua;"></li>
+                        <li id="darkOrchid" style="background-color: darkorchid;"></li>
+                        <li id="crimson" style="background-color: crimson;"></li>
+                        <li id="orange" style="background-color: orange;"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: -3px; " color="black">
+        <div class="tips">
+            <p>For Help,click Help Topics on the Help Menu.</p>
+        </div>
+    </div>
+</body>
+</html>
